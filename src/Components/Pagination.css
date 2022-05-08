@@ -1,0 +1,36 @@
+.page-item{
+        
+    height: 100%;
+    width: 25%;
+    display: flex;
+padding-top: 14px;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+border: dotted 0.2px grey;
+   
+}
+.page-item:hover{
+    cursor: pointer;
+    background-color:grey;
+    color: black;
+}
+.pagi{ 
+
+    width: 1000px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+       
+}
+
+.page{
+
+    width: 1000px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
