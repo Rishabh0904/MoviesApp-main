@@ -17,6 +17,9 @@ export default function Signup(props) {
             alignItems: "center",
             margin: "auto"
         },
+        defaultStyle : {
+            marginTop : '10px'
+        }
     })
     const classes = useStyles();
 
@@ -118,7 +121,7 @@ return (
                 <Card variant="outlined"
                     style={{ padding: "1rem" }}>
                     <CardMedia
-                        image="https://www.logo.wine/a/logo/Instagram/Instagram-Wordmark-Black-Logo.wine.svg"
+                        image="https://foyrboost.s3.ap-south-1.amazonaws.com/banners/staging/banner_617965e3-c83c-44c3-ac69-2f9a951bdbc4_cornflix.PNG"
                         style={{ backgroundSize: "contain", height: "10rem", }} />
                     <Grid container spacing={1}>
                         <Grid
@@ -129,7 +132,6 @@ return (
                                 gutterBottom
                                 size="small"
                                 style={{ color: "#8395a7", textAlign: "center" }}>
-                                Sign up to see photos and videos from your friends.
                             </Typography>
                         </Grid>
                         <Grid
@@ -141,7 +143,9 @@ return (
                                 variant="outlined"
                                 value={email}
                                 fullWidth={true}
-                                size="small"
+                                size="medium"
+                                inputProps={{style: {fontSize: 20}}} 
+                                 InputLabelProps={{style: {fontSize: 25 , marginTop : '3px'}}}
                                 onChange={(e) => { setEmail(e.target.value) }}
                             />
                         </Grid>
@@ -154,7 +158,10 @@ return (
                                 variant="outlined"
                                 value={password}
                                 fullWidth={true}
-                                size="small"
+                                className={classes.defaultStyle}
+                                size="medium"
+                                inputProps={{style: {fontSize: 20}}} 
+                                 InputLabelProps={{style: {fontSize: 25 , marginTop : '3px'}}} 
                                 onChange={(e) => { setPassword(e.target.value) }}
                             />
                         </Grid>
@@ -167,7 +174,10 @@ return (
                                 variant="outlined"
                                 value={username}
                                 fullWidth={true}
-                                size="small"
+                                className={classes.defaultStyle}
+                                size="medium"
+                                inputProps={{style: {fontSize: 20}}} 
+                                 InputLabelProps={{style: {fontSize: 25 , marginTop : '3px'}}}
                                 onChange={(e) => { setUsername(e.target.value) }}
                             />
                         </Grid>
@@ -180,7 +190,10 @@ return (
                                 variant="outlined"
                                 value={userBio}
                                 fullWidth={true}
-                                size="small"
+                                className={classes.defaultStyle}
+                                size="medium"
+                                inputProps={{style: {fontSize: 20}}} 
+                                 InputLabelProps={{style: {fontSize: 25 , marginTop : '3px'}}}
                                 onChange={(e) => { setUserBio(e.target.value) }}
                             />
                         </Grid>
@@ -195,7 +208,12 @@ return (
                                 startIcon={<BackupIcon />}>UPLOAD PROFILE IMAGE
                                 <TextField
                                     type="file"
-                                    style={{ opacity: "0", position: "absolute", width: "100%", height: "100%" }}>
+                                    style={{ opacity: "0", position: "absolute", width: "100%", height: "100%", fontSize : "4rem" }}
+                                className={classes.defaultStyle}
+                                size="medium"
+                                inputProps={{style: {fontSize: 20}}} 
+                                 InputLabelProps={{style: {fontSize: 25 , marginTop : '3px'}}}
+                                 >
                                 </TextField>
                             </Button>
                         </Grid>
@@ -205,7 +223,7 @@ return (
                                 variant="contained"
                                 // color="primary"
                                 fullWidth={true}
-                                style={{ backgroundColor: "#2e86de", color: "#ffffff" }}
+                                style={{ backgroundColor: "#2e86de", color: "#ffffff", fontSize : "2rem" }}
                                 size="medium"
                                 disabled={loader}
                                 onClick={handleSignUp}>SIGN UP
@@ -214,10 +232,10 @@ return (
                         <Grid
                             item xs={12} sm={12} md={12} lg={12}>
                             <Typography
-                                style={{ textAlign: "center" }}
+                                style={{ textAlign: "center", fontSize : "2rem" }}
                                 variant="body2"
                                 gutterBottom
-                                size="small">
+                                size="medium">
                                 By signing up, you agree to our Terms, Data Policy and Cookies Policy.
                             </Typography>
                         </Grid>
@@ -227,8 +245,9 @@ return (
                     variant="outlined"
                     style={{ marginTop: "2rem" }}>
                     <Typography
-                        style={{ textAlign: "center", padding: "0.5rem" }}
+                        style={{ textAlign: "center", padding: "0.5rem" , fontSize : '3rem'}}
                         variant="body1"
+                        size='medium'
                         gutterBottom>
                         Have an account? <LinkButton content="Log In"
                             routeLink="/login" />

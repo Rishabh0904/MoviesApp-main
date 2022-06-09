@@ -15,14 +15,29 @@ export default function Login(props) {
             alignItems: "center",
             margin: "auto"
         },
+        textField: {
+            fontSize : "20px"
+        },
+        defaultStyle : {
+            marginTop : '10px'
+        }
     })
     const classes = useStyles();
-
+    
+    const [styl, setStyle] = useState({});
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(false);
     const [loader, setLoader] = useState(false);
     const { login } = useContext(AuthContext);
+
+    const changeStyle = () => {
+        debugger
+        let obj  = {
+            fontSize : "20px" 
+        }
+        setStyle(obj);
+      };
 
     const handleSubmit = async (e) => {
         // Prevent default action of a submit button
@@ -53,12 +68,12 @@ export default function Login(props) {
                                 image="https://www.instagram.com/static/images/homepage/home-phones.png/43cc71bb1b43.png"
                                 style={{ backgroundSize: "contain", height: "86vh", position: "relative", display: "flex", justifyContent: "center", alignItems: "center" }}
                             >
-                                <div style={{ height: "26rem", width: "15rem", marginLeft: "5.5rem" }}>
-                                    <Carousel animation="fade" indicators={false} swipe={false} navButtonsAlwaysInvisible={true} autoPlay interval="5000">
-                                        <img src="https://www.instagram.com/static/images/homepage/screenshot1.jpg/d6bf0c928b5a.jpg" />
-                                        <img src="https://www.instagram.com/static/images/homepage/screenshot2.jpg/6f03eb85463c.jpg" />
-                                        <img src="https://www.instagram.com/static/images/homepage/screenshot4.jpg/842fe5699220.jpg" />
-                                        <img src="https://www.instagram.com/static/images/homepage/screenshot5.jpg/0a2d3016f375.jpg" />
+                                <div style={{ height: "55rem", width: "40rem", marginLeft: "20rem" }}>
+                                    <Carousel animation="fade" indicators={false} swipe={false} navButtonsAlwaysInvisible={true} autoPlay interval="3000">
+                                        <img style={{height: '560px'}} src="https://foyrboost.s3.ap-south-1.amazonaws.com/banners/staging/banner_ef8e5ab4-4ad8-46c6-9056-9313797315f3_WhatsApp Image 2022-05-08 at 11.04.03 PM.jpeg" />
+                                        <img  style={{height: '560px'}} src="https://foyrboost.s3.ap-south-1.amazonaws.com/banners/staging/banner_3db80755-d8e6-4d73-b6fd-e899765e5b9e_WhatsApp Image 2022-05-08 at 11.04.36 PM.jpeg" />
+                                        <img style={{height: '560px'}} src="https://foyrboost.s3.ap-south-1.amazonaws.com/banners/staging/banner_adbf6d99-6d64-4cb6-81f5-a64405231179_WhatsApp Image 2022-05-08 at 11.51.25 PM.jpeg" />
+                                        <img style={{height: '560px'}}  src="https://foyrboost.s3.ap-south-1.amazonaws.com/banners/staging/banner_7c3e5cbe-a85a-46c0-8864-20fb5158bb8c_WhatsApp Image 2022-05-08 at 11.50.25 PM.jpeg" />
                                     </Carousel>
                                 </div>
                             </CardMedia>
@@ -70,8 +85,8 @@ export default function Login(props) {
                     <Card variant="outlined"
                         style={{ padding: "1rem" }}>
                         <CardMedia
-                            image="https://drive.google.com/file/d/1s5oybrw0hBMsxxV9GQvXg77bZ2TkmyUu/view?usp=sharing"
-                            style={{ backgroundSize: "contain", height: "8rem", }} />
+                        image="https://foyrboost.s3.ap-south-1.amazonaws.com/banners/staging/banner_617965e3-c83c-44c3-ac69-2f9a951bdbc4_cornflix.PNG"
+                        style={{ backgroundSize: "contain", height: "8rem", }} />
                         <Grid container spacing={1}>
                             <Grid
                                 item xs={12} sm={12} md={12} lg={12}>
@@ -82,12 +97,16 @@ export default function Login(props) {
                                     variant="outlined"
                                     value={email}
                                     fullWidth={true}
-                                    size="small"
+                                   
+                                size="medium"
+                                inputProps={{style: {fontSize: 20}}} 
+                                 InputLabelProps={{style: {fontSize: 25 , marginTop : '3px'}}}
+                                    autoFocus={true}
                                     onChange={(e) => { setEmail(e.target.value) }}
                                 />
                             </Grid>
                             <Grid
-                                item xs={12} sm={12} md={12} lg={12}>
+                                item xs={12} sm={12} md={12} lg={12} >
                                 <TextField
                                     id="outlined-password-input"
                                     label="Password"
@@ -95,14 +114,19 @@ export default function Login(props) {
                                     variant="outlined"
                                     value={password}
                                     fullWidth={true}
-                                    size="small"
+                                    className={classes.defaultStyle}
+                                size="medium"
+                                inputProps={{style: {fontSize: 20}}} 
+                                 InputLabelProps={{style: {fontSize: 25 , marginTop : '3px'}}}
                                     onChange={(e) => { setPassword(e.target.value) }}
+                                    // onClick={() => {change}}
+                                    style={styl}
                                 />
                             </Grid>
                             <Grid
                                 item xs={12} sm={12} md={12} lg={12}>
                                 <Typography
-                                    style={{ textAlign: "center" }}
+                                    className={classes.textField}
                                     variant="body1"
                                     gutterBottom>
                                     <LinkButton content="Forgot Password?"
@@ -116,7 +140,7 @@ export default function Login(props) {
                                     disabled={loader}
                                     fullWidth={true}
                                     size="medium"
-                                    style={{ backgroundColor: "#2e86de", color: "#ffffff" }}
+                                    style={{ backgroundColor: "#2e86de", color: "#ffffff", fontSize : "2rem" }}
                                     onClick={handleSubmit}>Login
                                 </Button>
                             </Grid>
@@ -126,7 +150,7 @@ export default function Login(props) {
                         variant="outlined"
                         style={{ marginTop: "2rem" }}>
                         <Typography
-                            style={{ textAlign: "center", padding: "0.5rem" }}
+                            style={{ textAlign: "center", padding: "0.5rem", fontSize : "3rem" }}
                             variant="body1"
                             gutterBottom>
                             Don't have an account? <LinkButton content="Sign up"

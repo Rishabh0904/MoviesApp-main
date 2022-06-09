@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { makeStyles, Grid, Avatar, Container, Divider, CircularProgress } from '@material-ui/core';
 import LikeIcon from '@material-ui/icons/FavoriteBorder';
-// import HeaderBar from './HeaderBar';
 import Nav1 from './Nav1';
 import { AuthContext } from '../Contexts/AuthProvider';
 import { database } from '../Firebase';

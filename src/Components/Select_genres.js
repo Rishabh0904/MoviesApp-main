@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+
+
 
 const styles = theme => ({
     outer : {
@@ -38,13 +40,26 @@ const styles = theme => ({
   }
 });
 
+
+
 function ContainedButtons(props) {
+
+  const [genreId, setgenreId] = useState(1);
+  const [c, setC] = useState(0);
+  const logValue = (e) => {
+    debugger
+    console.log(e.currentTarget.getAttribute("genreId"));
+    let val = e.currentTarget.getAttribute("genreId");
+    setgenreId(val);
+    setC(10);
+  }
+  
   const { classes } = props;
   return (
       <div className = {classes.outer}>
     <div className = { classes.outerdiv}>
         <div className= {classes.genre}>Genres</div>
-      <Button variant="contained" href="/movies" className={classes.button}>Action</Button>
+      <Button variant="contained" href="/movies" genreId={10} className={classes.button} onClick = {(e) => {logValue(e)}}>Action</Button>
       <Button variant="contained" href="/movies" className={classes.button}> Adult</Button>
       <Button variant="contained" href="/movies" className={classes.button}> Adventure</Button>
       <Button variant="contained" href="/movies" className={classes.button}> Animation</Button>

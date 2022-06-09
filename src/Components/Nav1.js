@@ -58,6 +58,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
+    
   },
   search: {
     position: 'relative',
@@ -198,7 +199,7 @@ export default function Nav1(props) {
         <Link  to='/dubbed'>Dubbed</Link>
       </MenuItem>
       <MenuItem className={classes.mobileNavView}>
-        <Link  to='/geners'>Geners</Link>
+        <Link  to='/geners'>Genres</Link>
       </MenuItem>
       <MenuItem className={classes.mobileNavView}>
         <Link  to='/request'>Request</Link>
@@ -248,7 +249,7 @@ export default function Nav1(props) {
             <Link className={classes.prop} to='/featured'>Featured</Link>
             <Link className={classes.prop} to='/tvseries'>TV_Series</Link>
             <Link className={classes.prop} to='/dubbed'>Dubbed</Link>
-            <Link className={classes.prop} to='/geners'>Geners</Link>
+            <Link className={classes.prop} to='/geners'>Genres</Link>
             <Link className={classes.prop} to='/request'>Request</Link>
             <Link className={classes.prop} to='/hindi'>Upload</Link>
             <IconButton
